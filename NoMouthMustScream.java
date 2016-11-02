@@ -8,7 +8,7 @@ public class NoMouthMustScream extends Muscle{
 		this.message = message;
 	}
 	
-	public void update(){
+	public void work(){
 		System.out.println(message);
 	}
 }
