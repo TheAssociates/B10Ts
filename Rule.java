@@ -15,13 +15,13 @@ public class Rule{
 	}
 	
 	
-	private static ArrayList<Boolean> bTB(boolean[] imp){
+	public static ArrayList<Boolean> bTB(boolean[] imp){
 		ArrayList<Boolean> out = new ArrayList<Boolean>();
 		for(boolean x : imp) out.add(new Boolean(x));
 		return out;
 	}
 	
-	private static boolean[] BTb(ArrayList<Boolean> imp){
+	public static boolean[] BTb(ArrayList<Boolean> imp){
 		boolean[] out = new boolean[imp.size()];
 		for(int i = 0; i < out.length; i++){
 			out[i] = imp.get(i);

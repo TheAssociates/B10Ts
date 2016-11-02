@@ -1,4 +1,4 @@
-public class Gate implements Component implements Readable{
+public class Gate implements Component,Readable{
 	
 	Readable[] readFrom;
 	int[][] readFromPos;
@@ -33,9 +33,9 @@ public class Gate implements Component implements Readable{
 	
 	public void update(){
 		int o = 0;
-		input = boolean[count2D(readFromPos)];
+		boolean[] input = new boolean[count2D(readFromPos)];
 		for(int i = 0; i < readFrom.length; i++){
-			for(int j = 0; j < readFromPos[i]; j++){
+			for(int j = 0; j < readFromPos[i].length; j++){
 				input[o++] = readFrom[i].read(readFromPos[i][j]);	
 			}
 		}
@@ -43,7 +43,7 @@ public class Gate implements Component implements Readable{
 	}
 	
 	private static int count2D(int[][] x){
-		o = 0;
+		int o = 0;
 		for(int[] y : x){
 			for(int z : y){
 				o++;
