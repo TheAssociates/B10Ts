@@ -12,7 +12,7 @@ public abstract class Muscle implements Component{
 	abstract public void work();
 	
 	public void update(){
-		state = readFromMem.read(readFromPos);
+		readState();
 		work();
 	}
 }

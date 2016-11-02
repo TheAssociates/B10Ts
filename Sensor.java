@@ -1,7 +1,7 @@
-public abstract class Sensor implements Component implements Readable{
+public abstract class Sensor implements Component,Readable{
 	
-	public Memory writeToMem;
-	public int[] writeToPos;
+	public Readable readFrom;
+	public int[] readFromPos;
 	public boolean[] state;
 	
 	public boolean[] read(int[] pos){
@@ -17,14 +17,7 @@ public abstract class Sensor implements Component implements Readable{
 		return state[pos];
 	}
 	
-	public void update(){
-		
-	}
-	
-	public void writeState(){
-		writeToMem.write(writeToPos,state);
-	}
-	
+	abstract public void update();
 	
 	
 }
