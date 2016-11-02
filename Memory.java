@@ -1,4 +1,4 @@
-public class Memory extends Component implements Readable{
+public class Memory implements Component implements Readable{
 
 	private boolean[] state;
 	
@@ -40,7 +40,7 @@ public class Memory extends Component implements Readable{
 		state = new boolean[state.length];
 	}
 	
-	
+	public void update(){}
 	
 	private int lcodeToInt(String alpha){
 		alpha = alpha.toUpperCase();

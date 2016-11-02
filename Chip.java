@@ -1,6 +1,15 @@
 public class Chip{
 	
-	public Chip(Component[] parts ){
-		
+	private Component[] parts;
+	
+	public Chip(Component[] prts ){
+		parts = prts;
 	}
+	
+	public void tick(){
+		for(int i = 0; i < parts.length; i++){
+			for(Component x : parts) x.update();
+		} 
+	}
+	
 }

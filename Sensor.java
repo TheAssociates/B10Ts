@@ -1,4 +1,4 @@
-public abstract class Sensor extends Component implements Readable{
+public abstract class Sensor implements Component implements Readable{
 	
 	public Memory writeToMem;
 	public int[] writeToPos;
@@ -17,7 +17,9 @@ public abstract class Sensor extends Component implements Readable{
 		return state[pos];
 	}
 	
-	
+	public void update(){
+		
+	}
 	
 	public void writeState(){
 		writeToMem.write(writeToPos,state);

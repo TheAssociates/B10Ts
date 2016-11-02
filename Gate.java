@@ -1,4 +1,4 @@
-public class Gate extends Component implements Readable{
+public class Gate implements Component implements Readable{
 	
 	Readable[] readFrom;
 	int[][] readFromPos;
@@ -25,5 +25,28 @@ public class Gate extends Component implements Readable{
 	public boolean read(int pos){ // must deal wih ArrayIndexOutOfBoundsException at higher level
 		return state[pos];
 	}
+	
+	public void update(){
+		int o = 0;
+		input = boolean[count2D(readFromPos)];
+		for(int i = 0; i < readFrom.length; i++){
+			for(int j = 0; j < readFromPos[i]; j++){
+				input[o++] = readFrom[i].read(readFromPos[i][j]);	
+			}
+		}
+		state = rule.a(input);
+	}
+	
+	private static int count2D(int[][] x){
+		o = 0;
+		for(int[] y : x){
+			for(int z : y){
+				o++;
+			}
+		}
+		return o;
+	}
+	
+	
 	
 }

@@ -1,4 +1,4 @@
-public abstract class Muscle extends Component{
+public abstract class Muscle implements Component{
 	
 	public Readable readFromMem;
 	public int[] readFromPos;
@@ -11,4 +11,8 @@ public abstract class Muscle extends Component{
 	
 	abstract public void work();
 	
+	public void update(){
+		state = readFromMem.read(readFromPos);
+		work();
+	}
 }
