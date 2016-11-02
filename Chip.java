@@ -7,9 +7,9 @@ public class Chip{
 	}
 	
 	public void tick(){
-		for(int i = 0; i < parts.length; i++){
-			for(Component x : parts) x.update();
-		} 
+		for(Component x : parts) x.update();
 	}
+	
+	
 	
 }

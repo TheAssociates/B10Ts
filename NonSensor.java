@@ -2,9 +2,7 @@ public class NonSensor extends Sensor{
 	
 	private boolean pState;
 	
-	public NonSensor(Readable readFrom, int[] readFromPos, boolean pState){
-		this.readFrom = readFrom;
-		this.readFromPos = readFromPos;
+	public NonSensor (boolean pState){
 		this.pState = pState;
 	}
 	
