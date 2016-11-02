@@ -8,13 +8,18 @@ public abstract class Sensor implements Component,Readable{
 		boolean[] out = new boolean[pos.length];
 		int i = 0;
 		for(int x : pos){
-			out[i] = state[x];
+			out[i] = read(x);
 		}
 		return out;
 	}
 	
 	public boolean read(int pos){ // must deal wih ArrayIndexOutOfBoundsException at higher level
-		return state[pos];
+		try{
+			return state[pos];
+		} catch (NullPointerException g){
+			return false;
+		}
+		
 	}
 	
 	abstract public void update();

@@ -9,6 +9,6 @@ public class NoMouthMustScream extends Muscle{
 	}
 	
 	public void work(){
-		System.out.println(message);
+		if(state[0]){System.out.println(message);}
 	}
 }

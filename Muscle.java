@@ -2,7 +2,7 @@ public abstract class Muscle implements Component{
 	
 	public Readable readFromMem;
 	public int[] readFromPos;
-	private boolean[] state;
+	public boolean[] state;
 	
 	private void readState(){
 		state = readFromMem.read(readFromPos);

@@ -1,4 +1,4 @@
-public class Memory implements Component implements Readable{
+public class Memory implements Component,Readable{
 
 	private boolean[] state;
 	
@@ -8,17 +8,24 @@ public class Memory implements Component implements Readable{
 	}
 	
 	
-	public boolean read(int pos){ // must deal wih ArrayIndexOutOfBoundsException at higher level
-		return state[pos];
-	}
-	
 	public boolean[] read(int[] pos){
-		int i = 0;
 		boolean[] out = new boolean[pos.length];
+		int i = 0;
 		for(int x : pos){
-			out[i++] = state[x];
+			out[i] = read(x);
 		}
 		return out;
+	}
+	
+	public boolean read(int pos){ // must deal wih ArrayIndexOutOfBoundsException at higher level
+		try{
+			return state[pos];
+		} catch (NullPointerException g){
+			return false;
+		} catch (ArrayIndexOutOfBoundsException h){
+			return false;
+		}
+		
 	}
 	
 	public boolean write(int pos, boolean val){

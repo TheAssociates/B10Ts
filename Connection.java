@@ -1,4 +1,4 @@
-public class Connection extends Component{
+public class Connection implements Component{
 	
 	private Readable readFrom;
 	private int[] readFromPos;
@@ -6,8 +6,13 @@ public class Connection extends Component{
 	private Memory writeTo;
 	private int[] writeToPos;
 	
-	private boolean[] state;
-	
+	public Connection(Readable readFrom,int[] readFromPos,Memory writeTo,int[] writeToPos){
+		this.readFrom = readFrom;
+		this.readFromPos = readFromPos;
+		this.writeTo = writeTo;
+		this.writeToPos = writeToPos;
+	}
+		
 	public void update(){
 		writeTo.write(writeToPos, readFrom.read(readFromPos));
 	}
