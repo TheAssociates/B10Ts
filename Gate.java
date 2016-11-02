@@ -1,3 +1,4 @@
+
 public class Gate implements Component,Readable{
 	
 	Readable[] readFrom;
@@ -40,6 +41,7 @@ public class Gate implements Component,Readable{
 			}
 		}
 		state = rule.a(input);
+		
 	}
 	
 	private static int count2D(int[][] x){
