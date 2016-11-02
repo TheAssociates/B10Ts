@@ -16,10 +16,7 @@ public class Test{
 		
 		Chip e = new Chip(new Component[]{aa,ab,a,b,c,d});
 		e.tick();
-		e.tick();
-		e.tick();
-		e.tick();
-		e.tick();
+		
 		
 	}
 }
